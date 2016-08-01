@@ -21,11 +21,13 @@
 %
 % set up and static parameters (could be read in on command line)
 
-Fs            =  44100;
+Fs            =  48000;
 prompt        =  'Refresh rate?';
 refresh_rate  =  input(prompt);
 recorder      =  audiorecorder(Fs, 8, 1, 2);
-analyzer      =  dsp.SpectrumAnalyzer('SampleRate', Fs, 'PlotAsTwoSidedSpectrum', false, 'FrequencySpan', 'Start and stop frequencies', 'StartFrequency', 0, 'StopFrequency', Fs/2, 'SpectralAverages',100);
+analyzer      =  dsp.SpectrumAnalyzer('SampleRate', Fs, 'PlotAsTwoSidedSpectrum',...
+                 false, 'FrequencySpan', 'Start and stop frequencies', 'StartFrequency',...
+                 0, 'StopFrequency', Fs/2, 'SpectralAverages',100);
 
 % records an audiosample, plots the spectrum analysis.
 
